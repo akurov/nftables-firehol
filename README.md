@@ -1,2 +1,2 @@
 # nftables-firehol
-nftables blocklist loading example
+simple nftables blocklist loading script
