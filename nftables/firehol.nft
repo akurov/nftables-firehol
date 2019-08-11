@@ -2,9 +2,9 @@
 
 include "/tmp/firehol.include"
 
-flush set inet filter blocklist_ip4
+flush set ip raw blocklist_ip4
 
-table inet filter {
+table ip raw {
         set blocklist_ip4 {
                 type ipv4_addr
                 flags interval
@@ -12,7 +12,7 @@ table inet filter {
         }
 }
 
-table inet filter {
+table ip raw {
         set blocklist_ip4 {
                 type ipv4_addr
                 flags interval
@@ -20,7 +20,7 @@ table inet filter {
         }
 }
 
-table inet filter {
+table ip raw {
         set blocklist_ip4 {
                 type ipv4_addr
                 flags interval
