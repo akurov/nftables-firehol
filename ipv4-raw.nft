@@ -1,0 +1,13 @@
+#!/usr/sbin/nft -f
+
+table ip raw {
+        set blocklist_ip4 {
+                type ipv4_addr
+                flags interval
+        }
+
+        chain prerouting {
+                type filter hook prerouting priority -300; policy accept;
+                iif eth0 ip saddr @blocklist_ip4 drop
+        }
+}
