@@ -1,8 +1,8 @@
 #!/bin/sh
 
-curl -s https://iplists.firehol.org/files/firehol_level1.netset -o /tmp/firehol_level1.netset
-curl -s https://iplists.firehol.org/files/firehol_level2.netset -o /tmp/firehol_level2.netset
-curl -s https://iplists.firehol.org/files/firehol_level3.netset -o /tmp/firehol_level3.netset
+curl -s https://iplists.firehol.org/files/firehol_level1.netset -o /tmp/firehol_level1.netset -z /tmp/firehol_level1.netset
+curl -s https://iplists.firehol.org/files/firehol_level2.netset -o /tmp/firehol_level2.netset -z /tmp/firehol_level2.netset
+curl -s https://iplists.firehol.org/files/firehol_level3.netset -o /tmp/firehol_level3.netset -z /tmp/firehol_level3.netset
 
 echo 'define firehol_level1 = {' > /tmp/firehol.include
 sed '/^$/d;/^#/d;s/$/,/' /tmp/firehol_level1.netset >> /tmp/firehol.include
